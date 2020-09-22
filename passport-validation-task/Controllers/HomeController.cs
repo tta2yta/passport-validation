@@ -28,12 +28,12 @@ namespace passport_validation_task.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.message = "Incorrect PassPort Data";
+                ViewBag.message = "Неверные Паспортные Данные";
                 return View();
             }
             PassPort fullPassportVal =  new PassPort();
             fullPassportVal.fullPassport = fullPassport.fullPassport(passport.passSeries, passport.passNumber);
-            ViewBag.message = "Correct PassPort Data " + fullPassportVal.fullPassport;
+            ViewBag.message = "Правильные Паспортные Данные " + fullPassportVal.fullPassport;
             return  View(passport);
         }
 
